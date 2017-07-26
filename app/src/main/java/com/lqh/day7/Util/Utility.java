@@ -1,10 +1,12 @@
-package Util;
+package com.lqh.day7.Util;
 
 import android.text.TextUtils;
 
+import com.google.gson.Gson;
 import com.lqh.day7.db.City;
 import com.lqh.day7.db.County;
 import com.lqh.day7.db.Province;
+import com.lqh.day7.gson.Weather;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,7 +37,7 @@ public class Utility {
         return false;
     }
 
-    public static boolean handleCityReponse(String response,int provinceId){
+    public static boolean handleCityResponse(String response,int provinceId){
 
         if (!TextUtils.isEmpty(response)){
             try {
@@ -75,5 +77,17 @@ public class Utility {
             }
         }
         return false;
+    }
+
+    public static Weather handleWeatherResponse(String response){
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+            String weatherContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(weatherContent,Weather.class);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }
