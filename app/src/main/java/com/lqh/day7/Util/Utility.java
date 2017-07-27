@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.lqh.day7.db.City;
 import com.lqh.day7.db.County;
 import com.lqh.day7.db.Province;
+import com.lqh.day7.gson.BingPic;
 import com.lqh.day7.gson.Weather;
 
 import org.json.JSONArray;
@@ -85,6 +86,18 @@ public class Utility {
             JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
             String weatherContent = jsonArray.getJSONObject(0).toString();
             return new Gson().fromJson(weatherContent,Weather.class);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static BingPic handleBingPicResponse(String response){
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("images");
+            String bingImgContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(bingImgContent,BingPic.class);
         }catch (Exception e){
             e.printStackTrace();
         }

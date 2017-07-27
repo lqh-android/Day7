@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/change_city"
+            android:icon="@drawable/change_icon"
+            android:title="切换城市"/>
+    </group>
+
+</menu>

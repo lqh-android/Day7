@@ -11,24 +11,28 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
         android:text="生活建议"
+        android:textColor="#fff"
         android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/comfort_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#fff"
         android:layout_margin="15dp"/>
 
     <TextView
         android:id="@+id/car_wash_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#fff"
         android:layout_margin="15dp"/>
 
     <TextView
         android:id="@+id/sport_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#fff"
         android:layout_margin="15dp"/>
 
 </LinearLayout>
